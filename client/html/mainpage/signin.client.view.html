@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+    <title>任冰娟 - 登录</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="/public/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/velocity.css">
+    <script type="text/javascript" src="/public/js/mixpanel.js"></script>
+    <script type="text/javascript" src="/public/js/zendesk.js"></script>
+</head>
+
+<body class="login-page access-page has-full-screen-bg">
+    <div class="upper-wrapper">
+        <!-- ******HEADER****** -->
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="/"><span class="logo-icon"></span><span class="text">主页</span></a>
+                </h1><!--//logo-->
+
+            </div><!--//container-->
+        </header><!--//header-->
+
+        <!-- ******Login Section****** -->
+        <section class="login-section access-section section">
+            <div class="container" ng-app="SigninModule">
+                <div class="row">
+                    <div class="form-box col-lg-6 col-md-6 col-sm-8 col-xs-10 col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-xs-offset-1">
+                        <div class="form-box-inner">
+                            <h2 class="title text-center">登录</h2>
+                            <div class="row">
+                                <div class="form-container col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                    <form role="form" class="login-form" name="signinForm" novalidate ng-controller="SigninController" ng-submit="submitForm()">
+                                        <div class="form-group phone">
+                                            <label class="sr-only" for="phone-input">手机号</label>
+                                            <input id="phone-input" name="phone" type="phone" class="form-control" placeholder="手机号" required ng-model="formFields.phone" ob-focus="true">
+                                        </div><!--//form-group-->
+                                        <div class="form-group password">
+                                            <label class="sr-only" for="password-input">密码</label>
+                                            <input id="password-input" type="password" class="form-control" placeholder="密码" required ng-model="formFields.password">
+                                        </div><!--//form-group-->
+                                        <uib-alert ng-repeat="msg in errorMsgs" type="danger" ng-bind="msg"></uib-alert>
+                                        <button type="submit" class="btn btn-block btn-cta-primary">登录</button>
+                                         <p class="lead">您没有账号？<br /><a class="signup-link" href="/register">创建</a></p>
+                                    </form>
+                                </div><!--//form-container-->
+                            </div><!--//row-->
+                        </div><!--//form-box-inner-->
+                    </div><!--//form-box-->
+                </div><!--//row-->
+            </div><!--//container-->
+        </section><!--//contact-section-->
+    </div><!--//upper-wrapper-->
+
+
+    <script type="text/javascript" src="/public/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/public/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="/public/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/public/customlib/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/public/customlib/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/public/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/lib/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <script type="text/javascript" src="/client/js/mainpage/signin.client.module.js"></script>
+    <script type="text/javascript" src="/client/js/directives/custom.directives.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<div class="container" ng-controller="BlogAddController" style="padding-bottom:10px">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="blog-title">博客标题 (下方博客内容仍需要加入标题，并排版好博客界面)</label>
+                <input id="blog-title" type="text" class="form-control text-center" ng-model="blog.title" placeholder="博客标题" autofocus="autofocus">
+            </div>
+
+            <div class="form-group">
+                <label for="blog-author">博客的作者</label>
+                <input id="blog-author" type="text" class="form-control text-center" ng-model="blog.author" placeholder="作者" autofocus="autofocus">
+            </div>
+            <div class="from-group" style="padding-bottom: 15px">
+                <label>博客类型：</label>
+                <select class="form-control" ng-model="blog.blogType">
+                    <option ng-repeat="item in blogType" value="{{item.id}}">{{item.name}}</option>
+                </select>
+            </div>
+            <div text-angular ng-model="blog.content"></div>
+            <div class="text-right" style="padding-top:10px">
+                <button class="btn btn-primary" type="button" ng-click="submit()">提交</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+    <title>博客</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="/public/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/web_background.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/blog.css">
+    <link rel='stylesheet' href='/public/lib/textAngular/dist/textAngular.css'>
+</head>
+    <body class="container" ng-app="BlogModule" ng-controller="BlogController">
+        <div class="upper-wrapper">
+            <header class="header">
+                <div class="container">
+                    <h1 class="logo">
+                        <a href="/"><span class="logo-icon"></span><span class="text">主页</span></a>
+                    </h1>
+                </div>
+            </header>
+        </div>
+        <div class="row" style="padding-top: 30px">
+            <div class="col-sm-8 blog-main">
+                <div ng-view></div>
+            </div>
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="background-color: beige;">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4 ng-bind="user.nickname"></h4>
+                    <p ng-bind="user.description"></p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>标签</h4>
+                    <ol class="list-unstyled">
+                        <li ng-repeat="label in labels">
+                            <a href="{{'#/label/:' + label._id}}" ng-bind="label.title"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <a ng-show="isHasUserPermission" ng-click="openAddLabelModal()">添加标签</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>其他</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="https://github.com/Huyaguang">GitHub</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.blog-sidebar -->
+        </div>
+    </body>
+
+    <!-- 添加通知 -->
+    <script type="text/ng-template" id="noticeAdd.html">
+        <form ng-submit="submit()">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-title">添加标签</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="label-title">标签标题: </label>
+                    <input id="label-title" type="text" class="form-control" ng-model="label.title" placeholder="标签描述"></input>
+                </div>
+                <div class="form-group">
+                    <label for="label-description">标签描述: </label>
+                    <textarea id="label-description" type="text" class="form-control" ng-model="label.description" placeholder="标题的描述"></textarea>
+                </div>
+                <div class="from-group" style="padding-bottom: 15px">
+                    <label>标签类型：</label>
+                    <select class="form-control" ng-model="label.labelType">
+                        <option ng-repeat="item in labelType" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" ng-click="cancel()">取消</button>
+                <button type="submit" class="btn btn-primary">添加</button>
+            </div>
+        </form>
+    </script>
+
+    <script type="text/javascript" src="/public/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/public/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="/public/lib/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/public/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/public/customlib/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/public/customlib/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/public/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/lib/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src='/public/lib/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script type="text/javascript" src='/public/lib/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script type="text/javascript" src='/public/lib/textAngular/dist/textAngular.min.js'></script>
+
+
+    <script type="text/javascript" src="/client/js/blog/blog.client.view.js"></script>
+    <script type="text/javascript" src="/client/js/blog/bloglist.client.view.js"></script>
+    <script type="text/javascript" src="/client/js/blog/blogadd.client.view.js"></script>
+    <script type="text/javascript" src="/client/js/blog/blogdetail.client.view.js"></script>
+</html>
+

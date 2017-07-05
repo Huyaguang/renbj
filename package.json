@@ -1,0 +1,60 @@
+{
+  "name": "ls",
+  "version": "0.0.1",
+  "description": "myself",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huyaguang"
+  },
+  "keywords": [
+    "huyaguang"
+  ],
+  "author": "huyaguang",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "compression": "^1.6.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.1.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "filendir": "^1.0.0",
+    "gm": "^1.21.1",
+    "hashmap": "2.0.4",
+    "hbs": "^4.0.0",
+    "iap": "^0.5.0",
+    "iconv-lite": "0.4.13",
+    "lodash": "^4.5.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.3.4",
+    "mongoose-paginate": "^5.0.0",
+    "mongoose-unique-validator": "^0.6.2",
+    "morgan": "^1.6.1",
+    "multer": "^1.1.0",
+    "node-uuid": "^1.4.7",
+    "nodemailer": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pingpp": "^2.0.8",
+    "ursa": "^0.9.4",
+    "winston": "^2.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.1.0",
+    "grunt-contrib-csslint": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-env": "^0.4.4",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-node-inspector": "^0.4.1",
+    "grunt-nodemon": "^0.4.1",
+    "mocha": "^2.4.5",
+    "request": "^2.69.0",
+    "supertest": "^1.2.0"
+  }
+}
